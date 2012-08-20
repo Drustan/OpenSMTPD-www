@@ -20,22 +20,66 @@
 <h2><font color="#e00000">Portable OpenSMTPD</font></h2>
 <hr>
 
+<p>
 Normal OpenSMTPD development produces a very small, secure, and easy to
 maintain version for the OpenBSD project.
 The portability team takes that pure version and adds portability code
 so that OpenSMTPD can run on many other operating systems.
-<p>
+</p>
 
-The OpenSMTPD provided here is known to run on the following Unix
-operating systems:
 <p>
+OpenSMTPD runs on the following Unix operating systems:
+</p>
 
 <ul>
-<li>FreeBSD
-<li>NetBSD
-<li>DragonFlyBSD
+<li>FreeBSD <a href="http://www.freebsd.org/cgi/cvsweb.cgi/ports/mail/opensmtpd/">port</a></li>
+<li>NetBSD / DragonFlyBSD <a href="http://pkgsrc-wip.cvs.sourceforge.net/viewvc/pkgsrc-wip/wip/opensmtpd/">pkgsrc-wip</a></li>
 <li>Linux
+(<a href="https://aur.archlinux.org/packages.php?ID=61165">Archlinux AUR Package</a>,
+<a href="http://www.opensmtpd.org/opensmtpd-debian.tar.gz">Debian .deb (testing)</a>)</li>
+<li>Mac OS X</li>
 </ul>
+
+<p>
+OpenSMTPD is known to run on the following architectures:
+</p>
+
+<ul>
+<li>i386</li>
+<li>amd64</li>
+<li>sparc64</li>
+<li>armel</li>
+<li>powerpc</li>
+</ul>
+
+<p>
+OpenSMTPD is known to build on the following architectures:
+</p>
+
+<ul>
+<li>alpha</li>
+<li>amd64</li>
+<li>armish</li>
+<li>hppa</li>
+<li>i386</li>
+<li>landisk</li>
+<li>loongson</li>
+<li>luna88k</li>
+<li>macppc</li>
+<li>mvme88k</li>
+<li>sgi</li>
+<li>socppc</li>
+<li>sparc</li>
+<li>sparc64</li>
+<li>vax</li>
+<li>zaurus</li>
+</ul>
+
+<p>
+All combinations of systems / architectures have not been tested but should work, if they
+don't let us know so we can fix.
+</p>
+
 <!--
 <p>
 The portable OpenSMTPD follows development of the official version, but
@@ -46,7 +90,8 @@ releases are not synchronized. Portable releases are marked with a 'p'
 Until we have our first stable release, you can fetch our latest snapshot:
 
 <ul>
-<li><a href="/archives/opensmtpd-201207111000.tar.gz">opensmtpd-201207111000.tar.gz</a> [2012/07/11]</li>
+<li><a href="/archives/opensmtpd-latest.tar.gz">opensmtpd-latest.tar.gz</a></li>
+<li><a href="/archives/">Previous snapshots</a></li>
 </ul>
 
 <p>

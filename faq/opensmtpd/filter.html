@@ -60,7 +60,7 @@ please, use a max of 72 chars per line -->
 
 <a name="intro"></a>
 <h2>Introduction</h2>
-Filter rules control which messages get accepted or rejected by smtpd(8)
+Filter rules control which messages get accepted or rejected by smtpd
 based on information gathered during the SMTP session. The rules are 
 evaluated for every message processed by the daemon from first to last.
 The first matching rule decides what action is taken and if no rule
@@ -75,7 +75,7 @@ syntax for filter rules is:
 <blockquote>
 <tt>
 <i>action</i> from <i>client_ip_filter</i> for <i>domain_filter</i>
-{ deliver to <i>delivery_method</i> | relay <i>relay_method</i> }
+{ deliver to <i>delivery_method</i> | relay [<i>relay_method</i>] }
 [expire <i>expire_time</i>]
 </tt>
 </blockquote>
@@ -94,16 +94,27 @@ or <tt>reject</tt>.
 
 <dt><tt><i>domain_filter</i></tt>
 <dd>Filter based on the domain the message is sent to.
-<tt>for all</tt> matches regardless of the domain, the message is sent to.
-<tt>for domain <i>domain</i></tt> matches only local connections and
-<tt>from <i>network</i></tt> matches connections from
-<tt><i>network</i></tt> specified in CIDR notation.
+<tt>for all</tt> matches regardless of the domain,
+<tt>for domain <i>domain</i></tt> matches for this domain,
+<tt>for domain map <i>domains</i></tt> matches for domains which are
+part of map <i>domains</i>,
+<tt>for <i>local</i></tt> matches for localhost or the server's FQDN,
+and
+<tt>for virtual map <i>vmap</i></tt> matches for virtual domains which
+are part of map <i>vmap</i>
 
 <dt><tt><i>delivery_method</i></tt>
 <dd><tt>maildir <i>path</i></tt> adds mail to a Maildir,
 <tt>mbox</tt> delivers to a local user's mailbox,
 <tt>mda <i>program</i></tt> pipes the mail to a
 specified program.
+
+<dt><tt><i>relay_method</i></tt>
+<dd>Without a <tt><i>relay_method</i></tt> mail is relayed and routing
+is based on DNS,
+<tt>as <i>address</i></tt> optionally rewrites the sender advertised in
+the SMTP session, and
+<tt>via</tt> relays through the specified host expressed as a URL.
 
 <dt><tt><i>expire_time</i></tt>
 <dd>Specifies how long a message that matched this rule can stay in the

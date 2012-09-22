@@ -110,6 +110,8 @@ treated as a local user, matching "from local" filter rules
 <li><tt><i>map</i></tt> - map name</li>
 <li><tt><i>type</i></tt> - The following map types are supported:
   <ul>
+  <li><tt>file</tt> - Mappings are stored in a plain text file.
+    </li>
   <li><tt>db</tt> - Mappings are stored in a file created using
 <!-- =============================================================== -->
 <!-- XXX: link to www.opensmtpd.org for the right manpage for now    -->
@@ -118,10 +120,6 @@ treated as a local user, matching "from local" filter rules
     <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=makemap&amp;sektion=8&amp;manpath=OpenBSD+5.1"
 -->
     <a href="http://www.opensmtpd.org/makemap.8.html">makemap(8)</a>.
-    This is the default type if none is specified.</li> 
-  <li><tt>plain</tt> - Mappings are stored in a plain text file using
-    the same format as used to generate makemap(8) mappings.
-    </li>
   </ul>
 <li><tt><i>source</i></tt> - Absolute path to a file for the <tt>db</tt>
 and <tt>plain</tt> map types.</li>

@@ -10,12 +10,9 @@
 <meta name="distribution"  content="global">
 </head>
 
-<!-- =============================================================== -->
-<!-- XXX: gilles&co have to decide on the copyright and license      -->
-<!-- =============================================================== -->
 <!--
-Copyright (c) 2003, Nick Holland <nick@openbsd.org>
-Copyright (c) 2003, 2004, Joel Knight <enabled@myrealbox.com>
+Copyright (c) 2012 Gilles Chehade <gilles@openbsd.org>
+Copyright (c) 2012 Robert Peichaer <rpe@openbsd.org>
 
 Permission to use, copy, modify, and distribute this documentation for
 any purpose with or without fee is hereby granted, provided that the
@@ -86,8 +83,8 @@ Rebuild the aliases database, and enable the daemon:
 <blockquote>
 <pre>
 # newaliases 
-# echo "sendmail_flags=NO" >> /etc/rc.conf.local 
-# echo "smtpd_flags=" >> /etc/rc.conf.local 
+# echo sendmail_flags=NO >> /etc/rc.conf.local 
+# echo smtpd_flags= >> /etc/rc.conf.local 
 # /etc/rc.d/smtpd start
 </pre>
 </blockquote>
@@ -142,10 +139,13 @@ After boot, smtpd operation can be managed using the
 <blockquote>
 <pre>
 # smtpctl show queue      <i>Show currently queued mails</i>
-# smtpctl show runqueue   <i>Show mails scheduled for delivery</i>
 # smtpctl show stats      <i>Show smtpd runtime statistics</i>
 # smtpctl pause smtp      <i>Temporarily stop accepting incoming sessions</i>
 # smtpctl resume smtp     <i>Resume accepting incoming sessions</i>
+# smtpctl pause mda      <i>Temporarily stop local deliveries</i>
+# smtpctl resume mda     <i>Resume local deliveries</i>
+# smtpctl pause mta      <i>Temporarily stop remote deliveries</i>
+# smtpctl resume mta     <i>Resume remote deliveries</i>
 <pre>
 </blockquote>
 

@@ -11,6 +11,8 @@ OpenSMTPD has been under development for a long time now and many people
 are already using it in production, but this is our first stable release
 and if you were waiting for a GO! from us, here it is ;-)
 
+The archives are now available from the main site at www.OpenSMTPD.org
+
 We would like to thank the OpenSMTPD community for their help in testing
 the snapshots, reporting bugs, contributing code and packaging for other
 systems.
